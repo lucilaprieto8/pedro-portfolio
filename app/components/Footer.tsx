@@ -1,84 +1,81 @@
 import Image from "next/image";
 
-export function Footer() {
-  const year = new Date().getFullYear();
+type FooterProps = {
+  name: string;
+  role?: string;
+  email: string;
+  location?: string;
+  instagramUrl?: string;
+  linkedinUrl?: string;
+  imdbUrl?: string;
+};
 
+export default function Footer({
+  name,
+  role,
+  email,
+  location = "Ciudad Autónoma de Buenos Aires, Argentina",
+  instagramUrl,
+  linkedinUrl,
+  imdbUrl,
+}: FooterProps) {
   return (
-    <footer className="mt-24 bg-black text-white">
-      <div className="mx-auto max-w-6xl px-6 py-14">
-        
-        {/* Main Row */}
-        <div className="flex flex-col gap-12 md:flex-row md:items-center md:justify-between">
-          
+    <footer className="w-full bg-black">
+      <div className="mx-auto max-w-6xl px-6 py-10">
+        <div className="grid items-start gap-10 md:grid-cols-12">
           {/* LEFT */}
-          <div className="flex items-center gap-6">
-            <div className="relative h-12 w-12">
-              <Image
-                src="/pedro.jpg"
-                alt="Pedro Colmeiro"
-                fill
-                className="object-contain"
-              />
-            </div>
-
-            <div className="space-y-1">
-              <div className="text-lg font-semibold">
-                Pedro Colmeiro
+          <div className="md:col-span-5">
+            <div className="flex items-start gap-4">
+              <div className="relative h-12 w-12 overflow-hidden rounded-lg border border-white/10 bg-white/[0.03]">
+                <Image
+                  src="/pedro.jpg"
+                  alt="Pedro logo"
+                  fill
+                  className="object-contain p-2"
+                />
               </div>
 
-              <div className="text-sm text-white/70">
-                pedro@correo.com
-              </div>
-
-              <div className="text-sm text-white/50">
-                Ciudad Autónoma de Buenos Aires, Argentina
+              <div className="space-y-1">
+                <div className="text-base font-semibold text-white">{name}</div>
+                {role ? <div className="text-sm text-white/70">{role}</div> : null}
+                <a className="text-sm text-white/70 hover:text-pc-green" href={`mailto:${email}`}>
+                  {email}
+                </a>
+                <div className="text-sm text-white/55">{location}</div>
               </div>
             </div>
           </div>
 
           {/* RIGHT */}
-          <div className="text-left md:text-right">
-            <div className="text-xs tracking-[0.25em] text-white/40">
-              SOCIAL
-            </div>
-
-            <div className="mt-4 flex gap-6 text-sm md:justify-end">
-              <a
-                href="https://instagram.com/..."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/70 hover:text-pc-green transition"
-              >
-                Instagram
-              </a>
-
-              <a
-                href="https://linkedin.com/in/..."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/70 hover:text-pc-green transition"
-              >
-                LinkedIn
-              </a>
-
-              <a
-                href="https://imdb.com/name/..."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/70 hover:text-pc-green transition"
-              >
-                IMDb
-              </a>
+          <div className="md:col-span-7 md:flex md:justify-end">
+            <div className="min-w-[220px]">
+              <div className="text-xs tracking-[0.22em] text-pc-green">SOCIAL</div>
+              <div className="mt-4 space-y-3 text-sm">
+                {instagramUrl ? (
+                  <a className="block text-white/70 hover:text-pc-green" href={instagramUrl} target="_blank" rel="noreferrer">
+                    Instagram
+                  </a>
+                ) : null}
+                {linkedinUrl ? (
+                  <a className="block text-white/70 hover:text-pc-green" href={linkedinUrl} target="_blank" rel="noreferrer">
+                    LinkedIn
+                  </a>
+                ) : null}
+                {imdbUrl ? (
+                  <a className="block text-white/70 hover:text-pc-green" href={imdbUrl} target="_blank" rel="noreferrer">
+                    IMDb
+                  </a>
+                ) : null}
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Divider */}
-        <div className="my-10 h-px w-full bg-pc-green/40" />
+        {/* divider verde sutil */}
+        <div className="mt-10 h-px w-full bg-pc-green/25" />
 
-        {/* Bottom */}
-        <div className="text-xs text-white/40">
-          © {year} Pedro Colmeiro. All rights reserved.
+        <div className="mt-6 text-xs text-white/45">
+          © {new Date().getFullYear()} {name}. All rights reserved.
         </div>
       </div>
     </footer>
