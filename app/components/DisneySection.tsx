@@ -52,6 +52,11 @@ export function DisneySection() {
   return (
     <section data-nav="Disney" className="mx-auto max-w-6xl px-6 py-24">
 
+      {/* Título */}
+      <h2 className="mb-10 text-center text-4xl font-bold tracking-wide text-pc-green md:text-5xl">
+        DISNEY: CONTENIDOS DIGITALES
+      </h2>
+
       <div className="grid items-center gap-10 md:grid-cols-12">
         {/* LEFT: vertical reel */}
 <div className="md:col-span-5">

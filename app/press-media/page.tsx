@@ -10,18 +10,11 @@ export default function PressMediaPage() {
 
   return (
     <main className="mx-auto max-w-6xl px-6 pb-24 pt-10">
-      <h1 className="text-4xl font-bold tracking-tight text-pc-green">
-        Press & Media
-      </h1>
-      <p className="mt-3 max-w-2xl text-white/60">
-        Apariciones, entrevistas, notas, podcasts y cobertura de medios.
-      </p>
-
       <div className="mt-12 grid gap-10 md:grid-cols-3">
         {pressMedia.map((item) => (
           <article key={item.slug} className="text-center">
             <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-black">
-              <div className="relative aspect-[16/10] w-full">
+              <div className="relative aspect-[16/10] w-full">  
                 <Image
                   src={item.coverSrc}
                   alt={item.title}

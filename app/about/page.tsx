@@ -180,12 +180,9 @@ export default function AboutPage() {
       {/* CASOS DE ÉXITO (ACORDEÓN — sin video, más legible, pro) */}
       <section className="mx-auto max-w-6xl px-6 py-16">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-sm font-semibold tracking-[0.22em] text-pc-green">
+          <h2 className="text-2xl font-semibold tracking-[0.22em] text-pc-green">
             CASOS DE ÉXITO
           </h2>
-          <p className="mt-4 text-sm text-white/55">
-            Proyectos destacados. Expandí cada caso para ver contexto, rol y resultados.
-          </p>
         </div>
 
         <div className="mt-12 space-y-3">
@@ -213,9 +210,6 @@ export default function AboutPage() {
                   </div>
 
                   <div className="flex items-center gap-3">
-                    <span className="hidden text-xs text-white/45 md:inline">
-                      Expandir
-                    </span>
                     <span className="text-white/60 transition-transform duration-200 group-open:rotate-45">
                       +
                     </span>

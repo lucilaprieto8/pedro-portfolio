@@ -40,6 +40,11 @@ export function SeleccionArgentinaSection() {
   return (
     <section data-nav="Selección Argentina" className="mx-auto max-w-6xl px-6 py-24">
 
+      {/* Título */}
+      <h2 className="mb-10 text-center text-4xl font-bold tracking-wide text-pc-green md:text-5xl">
+        SELECCIÓN ARGENTINA      
+      </h2>
+
       <div className="grid gap-10 md:grid-cols-12 md:items-center">
         {/* LEFT: horizontal video (70%) */}
         <div className="md:col-span-8">

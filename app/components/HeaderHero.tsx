@@ -101,19 +101,23 @@ useEffect(() => {
       </div>
 
       {/* PROJECTS title */}
-      <div className="w-full px-6">
+      <div className="w-full px-6 py-0">
         <div className="py-10">
           <h1 className="text-center text-6xl font-black tracking-tight text-pc-green md:text-7xl">
-            PROJECTS
+            PEDRO COLMEIRO
           </h1>
+          <p className="text-xs py-5 tracking-[0.25em] text-white/70 text-center">
+          PRODUCTOR AUDIOVISUAL
+          </p>
+
         </div>
-      </div>
+        </div>
 
       {/* Infinite ticker full width */}
       <div className="relative w-full border-y border-white/10 bg-black/60">
         <div
           ref={trackRef}
-          className="no-scrollbar flex w-full gap-6 overflow-x-auto px-6 py-5"
+          className="no-scrollbar flex w-full gap-6 overflow-x-auto px-6 py-0"
           style={{ msOverflowStyle: "none" as any }}
         >
           {items.map((name, i) => (

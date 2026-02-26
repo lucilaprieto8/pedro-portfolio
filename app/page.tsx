@@ -23,10 +23,8 @@ export default function Home() {
     <main className="min-h-screen bg-black text-white">
       <Navbar />
       <HeaderHero projects={projectNames} />
-      <div className="mx-auto max-w-6xl px-6 py-32">
-        <div className="mt-12">
-          <ProjectsInteractive />
-        </div>
+      <div className="mx-auto max-w-6xl py-26">
+      <ProjectsInteractive />
       </div>
       <YatraTabbedVideo />
       <ClankSection />
