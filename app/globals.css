@@ -64,3 +64,8 @@ html { scroll-behavior: smooth; }
 
 .pc-scroll-x::-webkit-scrollbar { display: none; }
 .pc-scroll-x { scrollbar-width: none; -ms-overflow-style: none;}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

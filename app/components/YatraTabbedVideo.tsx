@@ -84,7 +84,7 @@ export function YatraTabbedVideo() {
       </div>
 
       {/* VIDEO CARD */}
-      <div className="rounded-b-2xl border border-pc-green border-t-0 bg-black/40 p-4">
+      <div className="rounded-b-2xl border border-pc-green bg-black/40 p-4">
         <div className="relative overflow-hidden rounded-2xl border border-black/40">
           {/* OVERLAY */}
           {isInfoOpen && (

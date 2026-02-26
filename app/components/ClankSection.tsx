@@ -169,7 +169,7 @@ export function ClankSection() {
   <div className="w-full">
     <div className="relative">
       {/* CONTENEDOR BORDE VERDE */}
-      <div className="rounded-3xl border border-pc-green/70 bg-black/40 p-4 md:p-6">
+      <div className="rounded-3xl border border-pc-green bg-black/40 p-4 md:p-6">
         <div
           ref={trackRef}
           onMouseEnter={() => (isHoveringRef.current = true)}
@@ -249,7 +249,7 @@ export function ClankSection() {
               onClick={() => scroll()}
               className={[
                 "h-2 w-2 rounded-full transition",
-                activeDot === i ? "bg-pc-green" : "bg-pc-green/30 hover:bg-pc-green/60",
+                activeDot === i ? "bg-pc-green" : "bg-white/30",
               ].join(" ")}
               aria-label={`Ir a item ${i + 1}`}
             />
