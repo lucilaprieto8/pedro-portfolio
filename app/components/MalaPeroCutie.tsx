@@ -93,30 +93,24 @@ export function MalaPeroCutieSection() {
       data-nav="Mala Pero Cutie"
       className="mx-auto max-w-6xl px-6 py-24"
     >
+       {/* Título */}
+      <div className="md:col-span-12">
+      <h2 className="mb-10 text-center text-4xl font-bold tracking-wide text-pc-green md:text-5xl">
+        MALA PERO CUTIE      
+      </h2>
+      </div>
+      
       <div className="grid gap-10 md:grid-cols-12">
         {/* LEFT */}
         <div className="md:col-span-7">
           {/* Card verde */}
-          <div className="rounded-3xl bg-[#3f6f3a] p-8 md:p-10">
-            <div className="flex items-center gap-6">
-              <div className="relative h-20 w-20 shrink-0">
-                <Image
-                  src="/projects/mpc/mpclogo.png"
-                  alt="Mala pero cutie"
-                  fill
-                  className="object-contain"
-                  priority
-                />
-              </div>
-
+          <div className="rounded-3xl p-8 md:p-10">
               <p className="text-lg leading-snug text-white/95 md:text-xl">
                 Primer medio digital exclusivo de una artista argentina, <br />
                 creado para documentar y comunicar el MP3 Tour de Emilia Mernes.
               </p>
-            </div>
           </div>
 
-          {/* ✅ Stats centrados respecto al card verde */}
           <div className="mt-14 flex justify-center">
             <div className="w-full max-w-[640px]">
               <div className="grid grid-cols-2 gap-x-12 gap-y-14">
@@ -136,7 +130,6 @@ export function MalaPeroCutieSection() {
           </div>
         </div>
 
-        {/* RIGHT: video vertical */}
         <div className="md:col-span-5 md:flex md:justify-end md:items-center">
           <div className="w-full max-w-[340px] overflow-hidden rounded-[34px] border border-white/10 bg-black">
             <div className="aspect-[9/16] w-full">

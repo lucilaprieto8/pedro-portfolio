@@ -57,6 +57,14 @@ export function YatraTabbedVideo() {
 
   return (
     <section data-nav="Sebastían Yatra" className="mx-auto max-w-6xl px-6 pb-24">
+      
+      {/* Título */}
+      <div className="md:col-span-12">
+      <h2 className="mb-10 text-center text-4xl font-bold tracking-wide text-pc-green md:text-5xl">
+        SEBASTIAN YATRA      
+      </h2>
+      </div>
+
       {/* TABS */}
       <div className="flex flex-wrap gap-3">
         {tabs.map((t) => {

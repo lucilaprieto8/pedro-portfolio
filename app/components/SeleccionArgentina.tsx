@@ -5,7 +5,6 @@ import { useMemo, useState } from "react";
 type VerticalItem = {
   id: string;
   title: string;
-  role: string;
   year: string;
   src: string;
 };
@@ -16,14 +15,12 @@ export function SeleccionArgentinaSection() {
       {
         id: "afa-play",
         title: "AFA PLAY",
-        role: "VERTICAL CONTENT",
         year: "2021",
         src: "/projects/argentina/AFAPlay.mp4",
       },
       {
         id: "copa-2021",
         title: "COPA AMÉRICA 2021",
-        role: "COVERAGE",
         year: "2021",
         src: "/projects/argentina/AFAPlay.mp4",
       },
@@ -97,7 +94,7 @@ export function SeleccionArgentinaSection() {
             <button
               type="button"
               onClick={prev}
-              className="absolute left-[-54px] top-1/2 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/60 text-white/80 hover:border-pc-green hover:text-white md:flex"
+              className="absolute left-[-54px] top-1/2 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white bg-black/60 text-white hover:border-pc-green hover:text-white md:flex"
               aria-label="Previous"
             >
               ‹
@@ -106,7 +103,7 @@ export function SeleccionArgentinaSection() {
             <button
               type="button"
               onClick={next}
-              className="absolute right-[-54px] top-1/2 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/60 text-white/80 hover:border-pc-green hover:text-white md:flex"
+              className="absolute right-[-54px] top-1/2 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white bg-black/60 text-white hover:border-pc-green hover:text-white md:flex"
               aria-label="Next"
             >
               ›
@@ -116,9 +113,6 @@ export function SeleccionArgentinaSection() {
             <div className="mt-8 text-center">
               <div className="text-lg font-semibold tracking-wide text-pc-green">
                 {active.title}
-              </div>
-              <div className="mt-2 text-xs tracking-[0.18em] text-white/70">
-                {active.role}
               </div>
               <div className="mt-3 text-2xl font-semibold text-pc-green">
                 {active.year}

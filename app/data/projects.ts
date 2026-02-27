@@ -10,6 +10,7 @@ export type Project = {
   name: string;
   role?: string;
   date: string;
+  youtubeUrl?: string; 
   leftThumbSrc: string; // miniatura que se ve en la lista izquierda
   cameras: Camera[];
 };
@@ -19,7 +20,8 @@ export const projects: Project[] = [
     id: "quevedo-bzrp",
     name: "QUEVEDO || BZRP Music Sessions",
     role: "Director / Editor",
-    date: "JULIO 2025",
+    date: "JULY 2025",
+    youtubeUrl: "https://www.youtube.com/watch?v=V9bZqVYjH8s",
     leftThumbSrc: "/projects/quevedo/1_quevedo.png",
     cameras: [
       {
@@ -48,7 +50,8 @@ export const projects: Project[] = [
     id: "shakira-bzrp",
     name: "SHAKIRA || BZRP Music Sessions",
     role: "Director / Editor", // opcional
-    date: "ENERO 2023",
+    date: "JANUARY 2023",
+    youtubeUrl: "https://www.youtube.com/watch?v=V9bZqVYjH8s",
     leftThumbSrc: "/projects/shakira/1_shakira.png",
     cameras: [
       {
@@ -77,7 +80,8 @@ export const projects: Project[] = [
     id: "villano-bzrp",
     name: "VILLANO ANTILLANO || BZRP Music Sessions",
     role: "Director / Editor", // opcional
-    date: "JUNIO 2022",
+    date: "JUNE 2022",
+      youtubeUrl: "https://www.youtube.com/watch?v=V9bZqVYjH8s",
     leftThumbSrc: "/projects/villano/1_villano.png",
     cameras: [
       {
@@ -106,7 +110,8 @@ export const projects: Project[] = [
     id: "duki-bzrp",
     name: "DUKI || BZRP Music Sessions",
     role: "Director / Editor", // opcional
-    date: "NOVIEMBRE 2022",
+    date: "NOVEMBER 2022",
+    youtubeUrl: "https://www.youtube.com/watch?v=V9bZqVYjH8s",
     leftThumbSrc: "/projects/duki/1_duki.png",
     cameras: [
       {
@@ -135,7 +140,8 @@ export const projects: Project[] = [
     id: "luck-bzrp",
     name: "LUCK RA || BZRP Music Sessions",
     role: "Director / Editor", // opcional
-    date: "NOVIEMBRE 2025",
+    date: "NOVEMBER 2025",
+    youtubeUrl: "https://www.youtube.com/watch?v=V9bZqVYjH8s",
     leftThumbSrc: "/projects/luck/1_luck.png",
     cameras: [
       {
@@ -164,7 +170,8 @@ export const projects: Project[] = [
     id: "milo-bzrp",
     name: "MILO J || BZRP Music Sessions",
     role: "Director / Editor", // opcional
-    date: "OCTUBRE 2023",
+    date: "OCTOBER 2023",
+    youtubeUrl: "https://www.youtube.com/watch?v=V9bZqVYjH8s",
     leftThumbSrc: "/projects/milo/1_milo.png",
     cameras: [
       {
@@ -193,7 +200,8 @@ export const projects: Project[] = [
     id: "young-bzrp",
     name: "YOUNG MIKO || BZRP Music Sessions",
     role: "Director / Editor", // opcional
-    date: "ENERO 2024",
+    date: "JANUARY 2024",
+    youtubeUrl: "https://www.youtube.com/watch?v=V9bZqVYjH8s",
     leftThumbSrc: "/projects/young/1_young.png",
     cameras: [
       {
@@ -217,5 +225,5 @@ export const projects: Project[] = [
         imageSrc: "/projects/young/vhs_young.png",
       },
     ],
-  },
+  },  
 ];

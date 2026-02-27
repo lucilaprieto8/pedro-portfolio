@@ -8,6 +8,7 @@ type DisneyItem = {
   title: string;
   role: string;
   year: string;
+  contentStat?: string; // e.g. "120 contenidos verticales"
   reelSrc: string;   // video vertical
   posterSrc: string; // poster
 };
@@ -20,6 +21,7 @@ export function DisneySection() {
         title: "MUCHACHOS, LA PELICULA",
         role: "VERTICAL CONTENT",
         year: "2023",
+        contentStat: "60 contenidos verticales",
         reelSrc: "/projects/disney/muchachos.mp4",
         posterSrc: "/projects/disney/muchachos.jpg",
       },
@@ -28,6 +30,7 @@ export function DisneySection() {
         title: "HOMO ARGENTUM",
         role: "VERTICAL CONTENT",
         year: "2025",
+        contentStat: "120 contenidos verticales",
         reelSrc: "/projects/disney/homo.mp4",
         posterSrc: "/projects/disney/homo.jpg",
       },
@@ -36,6 +39,7 @@ export function DisneySection() {
         title: "COPPOLA, LA SERIE",
         role: "VERTICAL CONTENT",
         year: "2025",
+        contentStat: "80 contenidos verticales",
         reelSrc: "/projects/disney/coppola.mp4",
         posterSrc: "/projects/disney/coppola.avif",
       },
@@ -54,10 +58,10 @@ export function DisneySection() {
 
       {/* Título */}
       <h2 className="mb-10 text-center text-4xl font-bold tracking-wide text-pc-green md:text-5xl">
-        DISNEY: CONTENIDOS DIGITALES
+        DISNEY
       </h2>
 
-      <div className="grid items-center gap-10 md:grid-cols-12">
+      <div className="grid items-start gap-10 md:grid-cols-12">
         {/* LEFT: vertical reel */}
 <div className="md:col-span-5">
   <div className="mx-auto w-full max-w-[360px]">
@@ -85,6 +89,12 @@ export function DisneySection() {
         />
       </div>
     </div>
+
+    {active.contentStat && (
+      <div className="mt-4 text-center text-sm text-white/70">
+        {active.contentStat}
+        </div>
+        )}
   </div>
 </div>
 
@@ -110,7 +120,7 @@ export function DisneySection() {
             <button
               type="button"
               onClick={prev}
-              className="absolute left-[-52px] top-1/2 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/60 text-white/80 hover:border-pc-green hover:text-white md:flex"
+              className="absolute left-[-52px] top-1/2 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white text-white bg-black/60 hover:border-pc-green hover:text-white md:flex"
               aria-label="Previous"
             >
               ‹
@@ -118,7 +128,7 @@ export function DisneySection() {
             <button
               type="button"
               onClick={next}
-              className="absolute right-[-52px] top-1/2 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/60 text-white/80 hover:border-pc-green hover:text-white md:flex"
+              className="absolute right-[-52px] top-1/2 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white text-white bg-black/60 hover:border-pc-green hover:text-white md:flex"
               aria-label="Next"
             >
               ›
@@ -138,7 +148,7 @@ export function DisneySection() {
                 <button
                   type="button"
                   onClick={prev}
-                  className="h-10 w-10 rounded-full border border-white/15 bg-black/60 text-white/80 hover:border-pc-green hover:text-white"
+                  className="h-10 w-10 rounded-full border border-white bg-black/60 text-white hover:border-pc-green hover:text-white"
                   aria-label="Previous"
                 >
                   ‹
@@ -146,13 +156,30 @@ export function DisneySection() {
                 <button
                   type="button"
                   onClick={next}
-                  className="h-10 w-10 rounded-full border border-white/15 bg-black/60 text-white/80 hover:border-pc-green hover:text-white"
+                  className="h-10 w-10 rounded-full border border-white bg-black/60 text-white hover:border-pc-green hover:text-white"
                   aria-label="Next"
                 >
                   ›
                 </button>
               </div>
+              {/* Mini indicators */}
+<div className="mt-8 flex justify-center gap-3">
+  {items.map((item, i) => (
+    <button
+      key={item.id}
+      onClick={() => setIndex(i)}
+      className={[
+        "h-2.5 w-2.5 rounded-full transition-all duration-300",
+        i === index
+          ? "bg-pc-green scale-125"
+          : "bg-white/25 hover:bg-white/40",
+      ].join(" ")}
+      aria-label={`Go to ${item.title}`}
+    />
+  ))}
+</div>
             </div>
+            
           </div>
         </div>
       </div>

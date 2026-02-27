@@ -69,7 +69,6 @@ export function ProjectsInteractive() {
     if (next) setActiveCameraId(next.cameras[0].id);
   }
 
-  // 1) Medir la altura de un ciclo + arrancar centrado
   useEffect(() => {
     const container = listRef.current;
     if (!container) return;
@@ -84,16 +83,12 @@ export function ProjectsInteractive() {
     }, 0);
 
     return () => window.clearTimeout(t);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // 2) Mantener el seleccionado centrado (cuando cambia)
   useEffect(() => {
     centerSelectedInMiddle("smooth");
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeProjectId]);
 
-  // 3) Scroll infinito: cuando te acercás arriba/abajo, saltás al ciclo del medio
   useEffect(() => {
     const container = listRef.current;
     if (!container) return;
@@ -130,6 +125,14 @@ export function ProjectsInteractive() {
 
   return (
     <div data-nav="Bizarrap" className="grid grid-cols-1 gap-10 md:grid-cols-12">
+      
+      {/* Título */}
+      <div className="md:col-span-12">
+      <h2 className="mb-10 text-center text-4xl font-bold tracking-wide text-pc-green md:text-5xl">
+        BIZARRAP      
+      </h2>
+      </div>
+      
       {/* LEFT LIST */}
       <aside className="md:col-span-3">
         <div className="relative">
@@ -140,8 +143,7 @@ export function ProjectsInteractive() {
           <div
             ref={listRef}
             className={[
-              "pc-scroll max-h-[520px] overflow-y-auto overflow-x-visible",
-              "pr-3 pl-1 scroll-smooth",
+              "pc-scroll max-h-[520px] overflow-y-auto pr-4 scroll-smooth [scrollbar-gutter:stable]"
             ].join(" ")}
           >
             {/* padding grande para que el centro pueda quedar centrado */}
@@ -159,7 +161,7 @@ export function ProjectsInteractive() {
                     className={[
                       "w-full rounded-2xl p-2 text-left transition",
                       "focus:outline-none",
-                      "mx-1", // 👈 evita que se corte el ring/outline
+                      "mx-1", 
                       "border border-white/10 bg-black/30 hover:bg-black/40",
                       isActive
                         ? "ring-2 ring-pc-green bg-black/45"
@@ -221,18 +223,36 @@ export function ProjectsInteractive() {
         </div>
 
         <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/10 bg-black">
-          <div className="relative h-full w-full">
-            <Image
-              key={`${activeProject.id}-${activeCamera.id}`}
-              src={activeCamera.imageSrc}
-              alt={`${activeProject.name} - ${activeCamera.label}`}
-              fill
-              className="object-cover animate-[fadeIn_.18s_ease-out]"
-              sizes="(max-width: 768px) 100vw, 75vw"
-              priority
-            />
-          </div>
-        </div>
+  <div className="relative h-full w-full">
+    <Image
+      key={`${activeProject.id}-${activeCamera.id}`}
+      src={activeCamera.imageSrc}
+      alt={`${activeProject.name} - ${activeCamera.label}`}
+      fill
+      className="object-cover animate-[fadeIn_.18s_ease-out]"
+      sizes="(max-width: 768px) 100vw, 75vw"
+      priority
+    />
+  </div>
+
+  {/* YOUTUBE BUTTON */}
+  {activeProject.youtubeUrl && (
+    <a
+      href={activeProject.youtubeUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="absolute bottom-5 right-5 flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-black/60 backdrop-blur-sm transition hover:border-pc-green hover:bg-black/80 hover:shadow-[0_0_18px_rgba(0,255,120,0.25)]"
+      aria-label="Watch on YouTube"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        className="h-5 w-5 fill-white transition hover:fill-pc-green"
+      >
+        <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.8 15.5v-7l6.4 3.5-6.4 3.5z" />
+      </svg>
+    </a>
+  )}
+</div>
 
         {/* Camera tabs (hover cambia cámara) */}
         <div className="mt-6 flex flex-wrap gap-3">

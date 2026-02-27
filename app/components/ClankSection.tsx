@@ -136,36 +136,26 @@ export function ClankSection() {
   return (
     
     <section data-nav="Clank!" className="mx-auto max-w-6xl px-6 py-20">
-      <div className="grid gap-10 md:grid-cols-12">
-        {/* LEFT: logo + texto */}
-        <div className="md:col-span-4">
-          <div className="flex flex-col gap-6">
-            <div className="relative w-full max-w-[260px]">
-              <Image
-                src="/projects/clank/logoclank.png"
-                alt="Clank!"
-                width={520}
-                height={260}
-                className="h-auto w-full"
-                priority
-              />
-            </div>
+      
+      {/* Título */}
+      <div className="md:col-span-12">
+      <h2 className="mb-10 text-center text-4xl font-bold tracking-wide text-pc-green md:text-5xl">
+        CLANK!      
+      </h2>
+      </div>
 
-            <div className="space-y-4 text-white/70">
+      <div className="grid gap-10">
+        <div className="md:col-span-4">
+            <div className="space-y-4 text-white/70 md:text-left">
               <p>
-                Un canal de entrevistas y streaming en vivo donde el público participa,
-                las conversaciones son reales y los invitados tienen voz propia.
-              </p>
-              <p>
-                Un espacio de debate, juego e interacción que conecta deporte, cultura y
-                actualidad sin filtro.
+                Un canal de entrevistas y streaming en vivo donde el público participa, las conversaciones son reales y los invitados tienen voz propia.
+                Un espacio de debate, juego e interacción que conecta deporte, cultura y actualidad sin filtro.
               </p>
             </div>
           </div>
         </div>
 
-{/* RIGHT: infinite carousel + autoplay */}
-<div className="md:col-span-8 flex md:items-center">
+<div className="md:col-span-8 flex md:items-center p-6">
   <div className="w-full">
     <div className="relative">
       {/* CONTENEDOR BORDE VERDE */}
@@ -263,7 +253,6 @@ export function ClankSection() {
     </div>
   </div>
 </div>
-      </div>
     </section>
   );
 }

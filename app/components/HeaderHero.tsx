@@ -107,9 +107,8 @@ useEffect(() => {
             PEDRO COLMEIRO
           </h1>
           <p className="text-xs py-5 tracking-[0.25em] text-white/70 text-center">
-          PRODUCTOR AUDIOVISUAL
+          AUDIOVISUAL DIRECTOR AND PRODUCER
           </p>
-
         </div>
         </div>
 
