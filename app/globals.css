@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: #000;
+  height: 100%;
+}
+
+html{
+  background-color: #000;
+}
+
 :root {
   --pc-green: #7CFF4A; /* ajustamos después si querés */
 }
@@ -37,7 +49,6 @@ body {
 .bg-pc-green { background-color: var(--pc-green); }
 .border-pc-green { border-color: var(--pc-green); }
 
-html { scroll-behavior: smooth; }
 
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { scrollbar-width: none; }

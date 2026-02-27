@@ -84,7 +84,7 @@ export function Navbar() {
   }, [isHome]);
 
   return (
-    <nav className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/60 backdrop-blur">
+    <nav className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black backdrop-blur pt-0">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-6">
         {/* LEFT: logo + active section */}
         <div className="flex items-center gap-3">

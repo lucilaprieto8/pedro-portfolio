@@ -155,7 +155,7 @@ export function ClankSection() {
           </div>
         </div>
 
-<div className="md:col-span-8 flex md:items-center p-6">
+<div className="md:col-span-8 flex md:items-center py-4">
   <div className="w-full">
     <div className="relative">
       {/* CONTENEDOR BORDE VERDE */}

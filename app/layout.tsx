@@ -15,9 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-    <body className="text-white antialiased bg-gradient-to-b from-black via-black to-[#1e3b1a]">
+    <body className="text-white antialiased bg-black via-black to-[#1e3b1a]">
           <Navbar />
-        <div className="pt-16">{children}</div>
+        <div className="pt-0">{children}</div>
 
         <Footer
           name="Pedro Colmeiro"

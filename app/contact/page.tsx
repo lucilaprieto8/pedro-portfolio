@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function ContactPage() {
   return (
     <main className="min-h-screen bg-black text-white">
-      <section className="mx-auto max-w-6xl px-6 pb-24 pt-16">
+      <section className="mx-auto max-w-6xl px-6 pb-24 py-24">
         {/* Header */}
         <div className="mx-auto max-w-3xl text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-xs text-white/70">
@@ -16,11 +16,6 @@ export default function ContactPage() {
               Pedro
             </span>
           </h1>
-
-          <p className="mt-4 text-sm text-white/55 md:text-base">
-            Escribime con el contexto del proyecto y una referencia visual si tenés.
-            Respondo lo antes posible.
-          </p>
         </div>
 
         {/* Divider */}
